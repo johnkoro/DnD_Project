@@ -7,30 +7,20 @@ using System.Web.UI.WebControls;
 
 namespace DnD_Project
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class Login2 : System.Web.UI.Page
     {
         public string Error = "";
-        
         protected void Page_Load(object sender, EventArgs e)
         {
             div1.Visible = false;
-        }
-        
-
-        protected void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
 
         }
-        
-        
-
         protected void B1(object sender, EventArgs e)
         {
-            
-            Login.User_Name = Request.Form["UName"];
-            Login.Password = Request.Form["password"];
-            
+
+            Login.User_Name = Request.Form["Username"];
+            Login.Password = Request.Form["loginPassword"];
+
 
             User u = new User();
             u.U_Login(Login.User_Name, Login.Password);
@@ -43,23 +33,18 @@ namespace DnD_Project
                 {
                     Response.Redirect("DM_Home_Page.aspx");
                 }
-                
+
             }
             else
             {
-                Error = "Wrong Username/Password";
+                Error = "Wrong Credentials";
                 div1.Visible = true;
             }
-           
+
         }
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void B2(object sender, EventArgs e)
         {
-
-
-
+            div1.Visible = false;
         }
-        
     }
-
-    
 }

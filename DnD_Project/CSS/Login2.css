@@ -1,0 +1,33 @@
+﻿body {
+    background-color: black;
+}
+
+.container {
+    margin-top: 15%;
+    
+}
+
+.card-header {
+    padding: 5px 15px;
+}
+
+.profile-img {
+    width: 96px;
+    height: 116px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 150%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    color:red;
+}
+h1 {
+    text-align:center;
+    color: red;
+}
+.b2 {
+    padding: 0;
+    border: none;
+    background: none;
+}
+

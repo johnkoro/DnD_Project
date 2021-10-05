@@ -16,7 +16,7 @@ namespace DnD_Project
         }
         protected void LogOut_Button(object sender, EventArgs e)
         {
-            Response.Redirect("Login.aspx");
+            Response.Redirect("Login2.aspx");
         }
     }
 }
