@@ -83,9 +83,14 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="CSS\DM.css" />
     <Content Include="CSS\Login.css" />
     <Content Include="DM_Home_Page.aspx" />
     <Content Include="Images\Background.jpg" />
+    <Content Include="Images\Dndlogo.gif" />
+    <Content Include="Images\dndlogo.png" />
+    <Content Include="Images\dnd_trans.png" />
+    <Content Include="Images\logo.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />

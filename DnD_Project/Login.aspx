@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <link rel="stylesheet" href="CSS/Login.css">
-    
+    <script src="Scripts/ErrorMessage.js"></script>
 </head>
 
     <body>
@@ -23,6 +23,10 @@
             <div class="form-group"><asp:button ID="Button1" runat="server" CSSClass="btn btn-primary btn-block" text="Log In"  OnClick ="B1" ></asp:button></div>
             <div class="form-group"><asp:button ID="Button2" runat="server" CSSClass="btn btn-primary btn-block" text="Sign Up"></asp:button></div>
             <div class="MessagePanelDiv">
+            <div class="alert alert-danger alert-dismissible fade show" role="alert" id="div1" runat="server">
+                <% if (Error.Length > 0) { Response.Write(Error); } %>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+            </div>
 </div>
             <a href="#" class="forgot">Forgot your email or password?</a></form>
     </div>

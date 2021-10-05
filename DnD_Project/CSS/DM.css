@@ -1,0 +1,36 @@
+﻿.header img {
+    float: left;
+    width: 100px;
+    height: 100px;
+    background: #555;
+}
+
+.header h1 {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    color: red;
+    float: left;
+    
+}
+
+.header {
+    background-color:black;
+}
+
+body {
+    background-color: black;
+    background-image: url("/Images/dndlogo.png");
+    background-repeat: no-repeat;
+    height: 500px;
+    background-position:50% 190%;
+    
+}
+.header h3 {
+    position: relative;
+    text-align: right;
+    top: 10px;
+    color: red;
+    float:right;
+    display: inline;
+}

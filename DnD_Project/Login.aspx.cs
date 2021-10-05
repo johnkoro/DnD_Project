@@ -9,10 +9,11 @@ namespace DnD_Project
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
+        public string Error = "";
         
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            div1.Visible = false;
         }
         
 
@@ -26,6 +27,7 @@ namespace DnD_Project
 
         protected void B1(object sender, EventArgs e)
         {
+            
             Login.User_Name = Request.Form["UName"];
             Login.Password = Request.Form["password"];
             
@@ -45,7 +47,8 @@ namespace DnD_Project
             }
             else
             {
-               
+                Error = "Wrong Username/Password";
+                div1.Visible = true;
             }
            
         }
