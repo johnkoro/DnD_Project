@@ -9,15 +9,12 @@ namespace DnD_Project
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
-        public enum MessageType { Success, Error, Info, Warning };
+        
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-        protected void ShowMessage(string Message, MessageType type)
-        {
-            ScriptManager.RegisterStartupScript(this, this.GetType(), System.Guid.NewGuid().ToString(), "ShowMessage('" + Message + "','" + type + "');", true);
-        }
+        
 
         protected void TextBox1_TextChanged(object sender, EventArgs e)
         {
@@ -48,7 +45,7 @@ namespace DnD_Project
             }
             else
             {
-                ShowMessage("A problem has occurred while submitting data", MessageType.Error);
+               
             }
            
         }
