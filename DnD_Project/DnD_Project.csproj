@@ -44,6 +44,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -53,6 +56,24 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -67,6 +88,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Campaigns2.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -84,10 +106,22 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="CSS\DM.css" />
-    <Content Include="CSS\Login.css" />
     <Content Include="CSS\Login2.css" />
     <Content Include="DM_Home_Page.aspx" />
     <Content Include="Images\Background.jpg" />
+    <Content Include="Images\d12result1.gif" />
+    <Content Include="Images\d12result10.gif" />
+    <Content Include="Images\d12result11.gif" />
+    <Content Include="Images\d12result12.gif" />
+    <Content Include="Images\d12result2.gif" />
+    <Content Include="Images\d12result3.gif" />
+    <Content Include="Images\d12result4.gif" />
+    <Content Include="Images\d12result5.gif" />
+    <Content Include="Images\d12result6.gif" />
+    <Content Include="Images\d12result7.gif" />
+    <Content Include="Images\d12result8.gif" />
+    <Content Include="Images\d12result9.gif" />
+    <Content Include="Images\d12roll.gif" />
     <Content Include="Images\Dndlogo.gif" />
     <Content Include="Images\dndlogo.png" />
     <Content Include="Images\dnd_trans.png" />
@@ -105,6 +139,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Campaigns2.aspx.cs">
+      <DependentUpon>Campaigns2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Campaigns2.aspx.designer.cs">
+      <DependentUpon>Campaigns2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DM_Home_Page.aspx.cs">
       <DependentUpon>DM_Home_Page.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

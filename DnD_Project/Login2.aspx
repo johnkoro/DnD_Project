@@ -13,8 +13,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
-    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
-	<link rel="stylesheet" href="CSS/Login2.css">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'/>
+	<link rel="stylesheet" href="CSS/Login2.css"/>
 	<h1>D&D World</h1>
 	<script src="Scripts/ErrorMessage.js"></script>
 </head>
@@ -36,7 +36,7 @@
 						</div>
 						<div class="row">
 							<div class="col">
-								<hr> <!-- other content  -->
+								<hr/> <!-- other content  -->
 							</div>
 						</div>
 						<div class="row">
