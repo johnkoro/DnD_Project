@@ -58,29 +58,45 @@
 </nav>
     
   <ul class="nav flex-column" id="sidebar">
-  <li class="nav-item" >
-    <a class="nav-link active" href="#" style="color:red; font-size: 25px;"><i class="fas fa-dice-d20"></i></a>
+  <li class="nav-button" >
+     <asp:LinkButton runat="server" type="button" OnClick="D20" style="color:red; font-size: 25px;">
+     <asp:Timer ID="Timerd10" runat="server" Interval="1000" OnTick="Timer10" Enabled="false"></asp:Timer>
+     <asp:Timer ID="Timerd11" runat="server" Interval="1500" OnTick="Timer11" Enabled="false"></asp:Timer>
+     <i class="fas fa-dice-d20"></i>
+          </asp:LinkButton>
   </li>
       <br />
-  <li class="nav-item">
-    <a class="nav-link" href="#" style="color:red; font-size: 25px;"><i class="fas fa-dice-six"></i></a>
+  <li class="nav-button">
+     <asp:LinkButton runat="server" type="button" OnClick="D6" style="color:red; font-size: 25px;">
+     <asp:Timer ID="Timerd6" runat="server" Interval="1000" OnTick="Timer6" Enabled="false"></asp:Timer>
+     <asp:Timer ID="Timerd7" runat="server" Interval="1500" OnTick="Timer7" Enabled="false"></asp:Timer>
+     <i class="fas fa-dice-six"></i>
+         </asp:LinkButton>
   </li>
       <br />
-  <li class="nav-item">
-    <a class="nav-link" href="#" style="color:red; font-size: 25px;"><i class="fas fa-dice-four"></i></a>
+  <li class="nav-button">
+      <asp:LinkButton runat="server" type="button" OnClick="D4" style="color:red; font-size: 25px;">
+      <asp:Timer ID="Timerd4" runat="server" Interval="1000" OnTick="Timer4" Enabled="false"></asp:Timer>
+      <asp:Timer ID="Timerd5" runat="server" Interval="1500" OnTick="Timer5" Enabled="false"></asp:Timer>
+      <i class="fas fa-dice-four"></i>
+          </asp:LinkButton>
   </li>
       <br />
   <li class="nav-button">
       <asp:ScriptManager id="ScriptManager" runat="server" EnablePageMethods="false" EnablePartialRendering="true" EnableScriptGlobalization="false" EnableScriptLocalization="true" />
-      <asp:LinkButton runat="server" type="button" OnClick="D6" style="color:red; font-size: 25px;">
+      <asp:LinkButton runat="server" type="button" OnClick="D12" style="color:red; font-size: 25px;">
       <asp:Timer ID="Timer" runat="server" Interval="1000" OnTick="Timer1" Enabled="false"></asp:Timer>
       <asp:Timer ID="Timer3" runat="server" Interval="1500" OnTick="Timer2" Enabled="false"></asp:Timer>
     <i class="fas fa-dice-six"></i><i class="fas fa-dice-six"></i>
           </asp:LinkButton>
   </li>
       <br />
-  <li class="nav-item">
-    <a class="nav-link" href="#" style="color:red; font-size: 25px;"><i class="fas fa-dice-six"></i><i class="fas fa-dice-four"></i></a>
+  <li class="nav-button">
+      <asp:LinkButton runat="server" type="button" OnClick="D10" style="color:red; font-size: 25px;">
+      <asp:Timer ID="Timerd8" runat="server" Interval="1000" OnTick="Timer8" Enabled="false"></asp:Timer>
+      <asp:Timer ID="Timerd9" runat="server" Interval="1500" OnTick="Timer9" Enabled="false"></asp:Timer>
+      <i class="fas fa-dice-six"></i><i class="fas fa-dice-four"></i>
+          </asp:LinkButton>
   </li>
 </ul>
        </form>
@@ -133,6 +149,182 @@
     </div>
      <div id="div12" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
         <img src="Images/d12result12.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div13" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d4.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div14" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d4 result 1.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div15" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d4 result 2.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div16" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d4 result 3.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div17" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d4 result 4.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div18" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d6.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div19" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d6 result 1.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div20" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d6 result 2.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div21" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d6 result 3.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div22" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d6 result 4.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div23" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d6 result 5.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div24" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d6 result 6.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div25" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d10.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div26" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d10 result 1.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div27" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d10 result 2.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div28" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d10 result 3.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div29" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d10 result 4.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div30" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d10 result 5.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div31" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d10 result 6.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div32" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d10 result 7.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div33" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d10 result 8.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div34" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d10 result 9.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div35" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d10 result 10.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div36" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d20.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div37" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d20 result 1.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div38" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d20 result 2.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div39" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d20 result 3.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div40" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d20 result 4.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div41" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d20 result 5.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div42" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d20 result 6.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div43" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d20 result 7.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div44" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d20 result 8.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div45" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d20 result 9.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div46" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d20 result 10.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div47" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d20 result 11.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div48" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d20 result 12.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div49" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d20 result 13.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div50" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d20 result 14.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div51" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d20 result 15.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div52" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d20 result 16.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div53" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d20 result 17.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div54" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d20 result 18.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div55" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d20 result 19.gif" />
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    <div id="div56" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
+        <img src="Images/d20 result 20.gif" />
          <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
     </div>
 </body>
