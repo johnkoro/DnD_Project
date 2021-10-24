@@ -11,6 +11,8 @@ namespace DnD_Project
     {
         
         public string Username = Login.User_Name;
+        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             div0.Visible = false;
@@ -70,7 +72,7 @@ namespace DnD_Project
             div54.Visible = false;
             div55.Visible = false;
             div56.Visible = false;
-        }
+    }
         protected void LogOut_Button(object sender, EventArgs e)
         {
             Response.Redirect("Login2.aspx");
@@ -81,36 +83,114 @@ namespace DnD_Project
         }
         protected void D12(object sender, EventArgs e)
         {
-            Timer.Enabled = true;
-            div0.Visible = true;
-            
+            int multiplier = Int32.Parse(multy.Value);
+            int result = 0;
+            if (multiplier == 1)
+            {
+                Timer.Enabled = true;
+                div0.Visible = true;
+            }
+            else
+            {
+                Random rd = new Random();
+                for (int i = 0; i < multiplier; i++)
+                {
+
+                    int rand = rd.Next(1, 13);
+                    result = result + rand;
+
+                }
+            }
 
         }
         protected void D4(object sender, EventArgs e)
         {
-            Timerd4.Enabled = true;
-            div13.Visible = true;
-
+            int multiplier = Int32.Parse(multy.Value);
+            int result=0;
+            if (multiplier == 1)
+            {
+                Timerd4.Enabled = true;
+                div13.Visible = true;
+            }
+            else
+            {
+                Random rd = new Random();
+                for (int i=0; i<multiplier; i++)
+                {
+                    
+                    int rand = rd.Next(1, 5);
+                    result = result + rand;
+                    
+                }
+                
+            }
+            
 
         }
         protected void D6(object sender, EventArgs e)
         {
-            Timerd6.Enabled = true;
-            div18.Visible = true;
+            int multiplier = Int32.Parse(multy.Value);
+            int result = 0;
+            if (multiplier == 1)
+            {
+                Timerd6.Enabled = true;
+                div18.Visible = true;
+            }
+            else
+            {
+                Random rd = new Random();
+                for (int i = 0; i < multiplier; i++)
+                {
 
+                    int rand = rd.Next(1, 7);
+                    result = result + rand;
+
+                }
+            }
 
         }
         protected void D10(object sender, EventArgs e)
         {
-            Timerd8.Enabled = true;
-            div25.Visible = true;
+            int multiplier = Int32.Parse(multy.Value);
+            int result = 0;
+            if (multiplier == 1)
+            {
+                Timerd8.Enabled = true;
+                div25.Visible = true;
+            }
+            else
+            {
+                Random rd = new Random();
+                for (int i = 0; i < multiplier; i++)
+                {
 
+                    int rand = rd.Next(1, 11);
+                    result = result + rand;
+
+                }
+            }
 
         }
         protected void D20(object sender, EventArgs e)
         {
-            Timerd10.Enabled = true;
-            div36.Visible = true;
+            int multiplier = Int32.Parse(multy.Value);
+            int result = 0;
+            if (multiplier == 1)
+            {
+                Timerd10.Enabled = true;
+                div36.Visible = true;
+            }
+            else
+            {
+                Random rd = new Random();
+                for (int i = 0; i < multiplier; i++)
+                {
+
+                    int rand = rd.Next(1, 11);
+                    result = result + rand;
+
+                }
+            }
 
 
         }

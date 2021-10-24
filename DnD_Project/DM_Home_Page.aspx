@@ -99,7 +99,23 @@
           </asp:LinkButton>
   </li>
 </ul>
-       </form>
+    </br>
+<select name="no" id="multy" style ="background-color:black; color:red;" runat="server">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+  <option value="11">11</option>
+  <option value="12">12</option>
+</select>
+   </form>  
+       
     <div id="div0" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">
         <img src="Images/d12roll.gif" />
     </div>
