@@ -98,7 +98,9 @@
       <i class="fas fa-dice-six"></i><i class="fas fa-dice-four"></i>
           </asp:LinkButton>
   </li>
+ 
 </ul>
+   
     </br>
 <select name="no" id="multy" style ="background-color:black; color:red;" runat="server">
   <option value="1">1</option>
@@ -114,6 +116,15 @@
   <option value="11">11</option>
   <option value="12">12</option>
 </select>
+    </br>
+    </br>
+    <div class="input-group input-group-sm mb-3" id="res"  runat="server" visible="false" style="width: 5%;">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-sm" >Result</span>
+  </div>
+  <input type="text" id ="resu" runat="server"  class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" disabled="disabled"  ></input>
+  <asp:Timer ID="Timer12" runat="server" Interval="1500" OnTick="Timer13" Enabled="false"></asp:Timer>
+</div>
    </form>  
        
     <div id="div0" runat="server" class="div1" role="alert" style=" position:absolute; top:50%; right:40%; transform: translate(0, -50%);">

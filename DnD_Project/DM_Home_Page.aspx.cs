@@ -98,7 +98,9 @@ namespace DnD_Project
 
                     int rand = rd.Next(1, 13);
                     result = result + rand;
-
+                    res.Visible = true;
+                    resu.Value = result.ToString();
+                    Timer12.Enabled = true;
                 }
             }
 
@@ -120,7 +122,9 @@ namespace DnD_Project
                     
                     int rand = rd.Next(1, 5);
                     result = result + rand;
-                    
+                    res.Visible = true;
+                    resu.Value = result.ToString();
+                    Timer12.Enabled = true;
                 }
                 
             }
@@ -144,7 +148,9 @@ namespace DnD_Project
 
                     int rand = rd.Next(1, 7);
                     result = result + rand;
-
+                    res.Visible = true;
+                    resu.Value = result.ToString();
+                    Timer12.Enabled = true;
                 }
             }
 
@@ -166,7 +172,9 @@ namespace DnD_Project
 
                     int rand = rd.Next(1, 11);
                     result = result + rand;
-
+                    res.Visible = true;
+                    resu.Value = result.ToString();
+                    Timer12.Enabled = true;
                 }
             }
 
@@ -186,9 +194,11 @@ namespace DnD_Project
                 for (int i = 0; i < multiplier; i++)
                 {
 
-                    int rand = rd.Next(1, 11);
+                    int rand = rd.Next(1, 21);
                     result = result + rand;
-
+                    res.Visible = true;
+                    resu.Value = result.ToString();
+                    Timer12.Enabled = true;
                 }
             }
 
@@ -565,6 +575,10 @@ namespace DnD_Project
             div56.Visible = false;
             Timerd11.Enabled = false;
 
+        }
+        protected void Timer13(object sender, EventArgs e)
+        {
+            res.Visible = false;
         }
     }
 }

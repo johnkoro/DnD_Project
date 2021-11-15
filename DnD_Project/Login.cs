@@ -67,7 +67,7 @@ namespace DnD_Project
         public User U_Login(string username, string password)
         {
             User u = new User();
-            string ConnectionString = "Data Source=DESKTOP-54MBNCC;User ID=sa; Password=admin1!;Initial Catalog=DnD"; // Connection String to the db
+            string ConnectionString = "Data Source=192.168.1.10;User ID=masteruser; Password=admin;Initial Catalog=DnD"; // Connection String to the db
             string SelectUser = "Select Username, Password, User_ID, User_Role from [DnD].[dbo].[Users] where Username = @User_Name and Password = @password"; //Select query at Users Table
             using (System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(ConnectionString))
             {
