@@ -188,6 +188,7 @@
     <Compile Include="Campaigns2.aspx.designer.cs">
       <DependentUpon>Campaigns2.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Dice Log.cs" />
     <Compile Include="DM_Home_Page.aspx.cs">
       <DependentUpon>DM_Home_Page.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

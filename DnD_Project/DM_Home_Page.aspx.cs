@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,6 +13,7 @@ namespace DnD_Project
     {
         
         public string Username = Login.User_Name;
+        
         
 
         protected void Page_Load(object sender, EventArgs e)
@@ -72,6 +75,8 @@ namespace DnD_Project
             div54.Visible = false;
             div55.Visible = false;
             div56.Visible = false;
+            
+            
     }
         protected void LogOut_Button(object sender, EventArgs e)
         {
@@ -83,6 +88,8 @@ namespace DnD_Project
         }
         protected void D12(object sender, EventArgs e)
         {
+            tb1.Text = "";
+            Results.Text = "";
             int multiplier = Int32.Parse(multy.Value);
             int result = 0;
             if (multiplier == 1)
@@ -98,15 +105,44 @@ namespace DnD_Project
 
                     int rand = rd.Next(1, 13);
                     result = result + rand;
-                    res.Visible = true;
+                    res.Visible = false;
                     resu.Value = result.ToString();
                     Timer12.Enabled = true;
+                }
+                Dice_Log D = new Dice_Log();
+                Results.Text = Username + " rolled a " + result.ToString() + " on " + multiplier + "d12";
+                D.Add_Log(Results.Text);
+                string ConnectionString = "Data Source=192.168.1.6;User ID=masteruser; Password=admin;Initial Catalog=DnD";
+                SqlConnection con = new SqlConnection(@"Data Source=192.168.1.6;User ID=masteruser; Password=admin;Initial Catalog=DnD");
+                string trun = "Truncate table [DnD].[dbo].[Dice_temp]";
+                string Select = "Insert into [DnD].[dbo].[Dice_temp] (id, Result) Select top 10 [id],[Result] from [DnD].[dbo].[Dice] order by id desc";
+                SqlDataAdapter Select2 = new SqlDataAdapter("Select [Result] from [DnD].[dbo].[Dice_temp]", con);
+                using (System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(ConnectionString))
+                {
+                    SqlCommand command = new SqlCommand(trun, connection);
+                    SqlCommand command2 = new SqlCommand(Select, connection);
+                    connection.Open();
+                    
+                    command.ExecuteNonQuery();
+                    command2.ExecuteNonQuery();
+                    DataTable dt = new DataTable();
+                    Select2.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            tb1.Text += dt.Rows[i].ItemArray[0].ToString() + Environment.NewLine;
+                        }
+                        connection.Close();
+                    }
                 }
             }
 
         }
         protected void D4(object sender, EventArgs e)
         {
+            Results.Text = "";
+            tb1.Text = "";
             int multiplier = Int32.Parse(multy.Value);
             int result=0;
             if (multiplier == 1)
@@ -122,17 +158,45 @@ namespace DnD_Project
                     
                     int rand = rd.Next(1, 5);
                     result = result + rand;
-                    res.Visible = true;
+                    res.Visible = false;
                     resu.Value = result.ToString();
                     Timer12.Enabled = true;
                 }
-                
+                Dice_Log D = new Dice_Log();
+                Results.Text = Username + " rolled a " + result.ToString() + " on " + multiplier + "d4";
+                D.Add_Log(Results.Text);
+                string ConnectionString = "Data Source=192.168.1.6;User ID=masteruser; Password=admin;Initial Catalog=DnD";
+                SqlConnection con = new SqlConnection(@"Data Source=192.168.1.6;User ID=masteruser; Password=admin;Initial Catalog=DnD");
+                string trun = "Truncate table [DnD].[dbo].[Dice_temp]";
+                string Select = "Insert into [DnD].[dbo].[Dice_temp] (id, Result) Select top 10 [id],[Result] from [DnD].[dbo].[Dice] order by id desc";
+                SqlDataAdapter Select2 = new SqlDataAdapter("Select [Result] from [DnD].[dbo].[Dice_temp]", con);
+                using (System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(ConnectionString))
+                {
+                    SqlCommand command = new SqlCommand(trun, connection);
+                    SqlCommand command2 = new SqlCommand(Select, connection);
+                    connection.Open();
+                    
+                    command.ExecuteNonQuery();
+                    command2.ExecuteNonQuery();
+                    DataTable dt = new DataTable();
+                    Select2.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            tb1.Text += dt.Rows[i].ItemArray[0].ToString() + Environment.NewLine;
+                        }
+                        connection.Close();
+                    }
+                }
             }
             
 
         }
         protected void D6(object sender, EventArgs e)
         {
+            Results.Text = "";
+            tb1.Text = "";
             int multiplier = Int32.Parse(multy.Value);
             int result = 0;
             if (multiplier == 1)
@@ -148,15 +212,44 @@ namespace DnD_Project
 
                     int rand = rd.Next(1, 7);
                     result = result + rand;
-                    res.Visible = true;
+                    res.Visible = false;
                     resu.Value = result.ToString();
                     Timer12.Enabled = true;
+                }
+                Dice_Log D = new Dice_Log();
+                Results.Text = Username + " rolled a " + result.ToString() + " on " + multiplier + "d6";
+                D.Add_Log(Results.Text);
+                string ConnectionString = "Data Source=192.168.1.6;User ID=masteruser; Password=admin;Initial Catalog=DnD";
+                SqlConnection con = new SqlConnection(@"Data Source=192.168.1.6;User ID=masteruser; Password=admin;Initial Catalog=DnD");
+                string trun = "Truncate table [DnD].[dbo].[Dice_temp]";
+                string Select = "Insert into [DnD].[dbo].[Dice_temp] (id, Result) Select top 10 [id],[Result] from [DnD].[dbo].[Dice] order by id desc";
+                SqlDataAdapter Select2 = new SqlDataAdapter("Select [Result] from [DnD].[dbo].[Dice_temp]", con);
+                using (System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(ConnectionString))
+                {
+                    SqlCommand command = new SqlCommand(trun, connection);
+                    SqlCommand command2 = new SqlCommand(Select, connection);
+                    connection.Open();
+                    
+                    command.ExecuteNonQuery();
+                    command2.ExecuteNonQuery();
+                    DataTable dt = new DataTable();
+                    Select2.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            tb1.Text += dt.Rows[i].ItemArray[0].ToString() + Environment.NewLine;
+                        }
+                        connection.Close();
+                    }
                 }
             }
 
         }
         protected void D10(object sender, EventArgs e)
         {
+            Results.Text = "";
+            tb1.Text = "";
             int multiplier = Int32.Parse(multy.Value);
             int result = 0;
             if (multiplier == 1)
@@ -172,15 +265,44 @@ namespace DnD_Project
 
                     int rand = rd.Next(1, 11);
                     result = result + rand;
-                    res.Visible = true;
+                    res.Visible = false;
                     resu.Value = result.ToString();
                     Timer12.Enabled = true;
+                }
+                Dice_Log D = new Dice_Log();
+                Results.Text = Username + " rolled a " + result.ToString() + " on " + multiplier + "d10";
+                D.Add_Log(Results.Text);
+                string ConnectionString = "Data Source=192.168.1.6;User ID=masteruser; Password=admin;Initial Catalog=DnD";
+                SqlConnection con = new SqlConnection(@"Data Source=192.168.1.6;User ID=masteruser; Password=admin;Initial Catalog=DnD");
+                string trun = "Truncate table [DnD].[dbo].[Dice_temp]";
+                string Select = "Insert into [DnD].[dbo].[Dice_temp] (id, Result) Select top 10 [id],[Result] from [DnD].[dbo].[Dice] order by id desc";
+                SqlDataAdapter Select2 = new SqlDataAdapter("Select [Result] from [DnD].[dbo].[Dice_temp]", con);
+                using (System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(ConnectionString))
+                {
+                    SqlCommand command = new SqlCommand(trun, connection);
+                    SqlCommand command2 = new SqlCommand(Select, connection);
+                    connection.Open();
+                    
+                    command.ExecuteNonQuery();
+                    command2.ExecuteNonQuery();
+                    DataTable dt = new DataTable();
+                    Select2.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            tb1.Text += dt.Rows[i].ItemArray[0].ToString() + Environment.NewLine;
+                        }
+                        connection.Close();
+                    }
                 }
             }
 
         }
         protected void D20(object sender, EventArgs e)
         {
+            Results.Text = "";
+            tb1.Text = "";
             int multiplier = Int32.Parse(multy.Value);
             int result = 0;
             if (multiplier == 1)
@@ -196,9 +318,36 @@ namespace DnD_Project
 
                     int rand = rd.Next(1, 21);
                     result = result + rand;
-                    res.Visible = true;
+                    res.Visible = false;
                     resu.Value = result.ToString();
                     Timer12.Enabled = true;
+                }
+                Dice_Log D = new Dice_Log();
+                Results.Text = Username + " rolled a " + result.ToString() + " on " + multiplier + "d20";
+                D.Add_Log(Results.Text);
+                string ConnectionString = "Data Source=192.168.1.6;User ID=masteruser; Password=admin;Initial Catalog=DnD";
+                SqlConnection con = new SqlConnection(@"Data Source=192.168.1.6;User ID=masteruser; Password=admin;Initial Catalog=DnD");
+                string trun = "Truncate table [DnD].[dbo].[Dice_temp]";
+                string Select = "Insert into [DnD].[dbo].[Dice_temp] (id, Result) Select top 10 [id],[Result] from [DnD].[dbo].[Dice] order by id desc";
+                SqlDataAdapter Select2 = new SqlDataAdapter("Select [Result] from [DnD].[dbo].[Dice_temp]", con);
+                using (System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(ConnectionString))
+                {
+                    SqlCommand command = new SqlCommand(trun, connection);
+                    SqlCommand command2 = new SqlCommand(Select, connection);
+                    connection.Open();
+                    
+                    command.ExecuteNonQuery();
+                    command2.ExecuteNonQuery();
+                    DataTable dt = new DataTable();
+                    Select2.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            tb1.Text += dt.Rows[i].ItemArray[0].ToString() + Environment.NewLine;
+                        }
+                        connection.Close();
+                    }
                 }
             }
 
@@ -206,6 +355,8 @@ namespace DnD_Project
         }
         protected void Timer1(object sender, EventArgs e)
         {
+            tb1.Text = "";
+            Results.Text = "";
             Random rd = new Random();
             int rand = rd.Next(1, 12);
             div0.Visible = false;
@@ -270,6 +421,33 @@ namespace DnD_Project
                 Timer3.Enabled = true;
             }
             Timer.Enabled = false;
+            Dice_Log D = new Dice_Log();
+            Results.Text = Username + " rolled a " + rand.ToString() + " on 1d12";
+            D.Add_Log(Results.Text);
+            string ConnectionString = "Data Source=192.168.1.6;User ID=masteruser; Password=admin;Initial Catalog=DnD";
+            SqlConnection con = new SqlConnection(@"Data Source=192.168.1.6;User ID=masteruser; Password=admin;Initial Catalog=DnD");
+            string trun = "Truncate table [DnD].[dbo].[Dice_temp]";
+            string Select = "Insert into [DnD].[dbo].[Dice_temp] (id, Result) Select top 10 [id],[Result] from [DnD].[dbo].[Dice] order by id desc";
+            SqlDataAdapter Select2 = new SqlDataAdapter("Select [Result] from [DnD].[dbo].[Dice_temp]", con);
+            using (System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand(trun, connection);
+                SqlCommand command2 = new SqlCommand(Select, connection);
+                connection.Open();
+                
+                command.ExecuteNonQuery();
+                command2.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                Select2.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        tb1.Text += dt.Rows[i].ItemArray[0].ToString() + Environment.NewLine;
+                    }
+                    connection.Close();
+                }
+            }
         }
         protected void Timer2(object sender, EventArgs e)
         {
@@ -290,6 +468,8 @@ namespace DnD_Project
         }
         protected void Timer4(object sender, EventArgs e)
         {
+            tb1.Text = "";
+            Results.Text = "";
             Random rd = new Random();
             int rand = rd.Next(1, 4);
             div13.Visible = false;
@@ -314,6 +494,33 @@ namespace DnD_Project
                 Timerd5.Enabled = true;
             }
             Timerd4.Enabled = false;
+            Dice_Log D = new Dice_Log();
+            Results.Text = Username + " rolled a " + rand.ToString() + " on 1d4";
+            D.Add_Log(Results.Text);
+            string ConnectionString = "Data Source=192.168.1.6;User ID=masteruser; Password=admin;Initial Catalog=DnD";
+            SqlConnection con = new SqlConnection(@"Data Source=192.168.1.6;User ID=masteruser; Password=admin;Initial Catalog=DnD");
+            string trun = "Truncate table [DnD].[dbo].[Dice_temp]";
+            string Select = "Insert into [DnD].[dbo].[Dice_temp] (id, Result) Select top 10 [id],[Result] from [DnD].[dbo].[Dice] order by id desc";
+            SqlDataAdapter Select2 = new SqlDataAdapter("Select [Result] from [DnD].[dbo].[Dice_temp]", con);
+            using (System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand(trun, connection);
+                SqlCommand command2 = new SqlCommand(Select, connection);
+                connection.Open();
+                
+                command.ExecuteNonQuery();
+                command2.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                Select2.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        tb1.Text += dt.Rows[i].ItemArray[0].ToString() + Environment.NewLine;
+                    }
+                    connection.Close();
+                }
+            }
         }
         protected void Timer5(object sender, EventArgs e)
         {
@@ -326,6 +533,8 @@ namespace DnD_Project
         }
         protected void Timer6(object sender, EventArgs e)
         {
+            tb1.Text = "";
+            Results.Text = "";
             Random rd = new Random();
             int rand = rd.Next(1, 6);
             div18.Visible = false;
@@ -360,6 +569,34 @@ namespace DnD_Project
                 Timerd7.Enabled = true;
             }
             Timerd6.Enabled = false;
+            Dice_Log D = new Dice_Log();
+            Results.Text = Username + " rolled a " + rand.ToString() + " on 1d6";
+            D.Add_Log(Results.Text);
+            string ConnectionString = "Data Source=192.168.1.6;User ID=masteruser; Password=admin;Initial Catalog=DnD";
+            SqlConnection con = new SqlConnection(@"Data Source=192.168.1.6;User ID=masteruser; Password=admin;Initial Catalog=DnD");
+            string trun = "Truncate table [DnD].[dbo].[Dice_temp]";
+            string Select = "Insert into [DnD].[dbo].[Dice_temp] (id, Result) Select top 10 [id],[Result] from [DnD].[dbo].[Dice] order by id desc";
+            SqlDataAdapter Select2 = new SqlDataAdapter("Select [Result] from [DnD].[dbo].[Dice_temp]", con);
+            using (System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand(trun, connection);
+                SqlCommand command2 = new SqlCommand(Select, connection);
+                connection.Open();
+
+                command.ExecuteNonQuery();
+                command2.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                Select2.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        tb1.Text += dt.Rows[i].ItemArray[0].ToString() + Environment.NewLine;
+                    }
+                    connection.Close();
+                }
+            }
+
         }
         protected void Timer7(object sender, EventArgs e)
         {
@@ -374,6 +611,8 @@ namespace DnD_Project
         }
         protected void Timer8(object sender, EventArgs e)
         {
+            tb1.Text = "";
+            Results.Text = "";
             Random rd = new Random();
             int rand = rd.Next(1, 10);
             div25.Visible = false;
@@ -428,9 +667,37 @@ namespace DnD_Project
                 Timerd9.Enabled = true;
             }
             Timerd8.Enabled = false;
+            Dice_Log D = new Dice_Log();
+            Results.Text = Username + " rolled a " + rand.ToString() + " on 1d10";
+            D.Add_Log(Results.Text);
+            string ConnectionString = "Data Source=192.168.1.6;User ID=masteruser; Password=admin;Initial Catalog=DnD";
+            SqlConnection con = new SqlConnection(@"Data Source=192.168.1.6;User ID=masteruser; Password=admin;Initial Catalog=DnD");
+            string trun = "Truncate table [DnD].[dbo].[Dice_temp]";
+            string Select = "Insert into [DnD].[dbo].[Dice_temp] (id, Result) Select top 10 [id],[Result] from [DnD].[dbo].[Dice] order by id desc";
+            SqlDataAdapter Select2 = new SqlDataAdapter("Select [Result] from [DnD].[dbo].[Dice_temp]", con);
+            using (System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand(trun, connection);
+                SqlCommand command2 = new SqlCommand(Select, connection);
+                connection.Open();
+                
+                command.ExecuteNonQuery();
+                command2.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                Select2.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        tb1.Text += dt.Rows[i].ItemArray[0].ToString() + Environment.NewLine;
+                    }
+                    connection.Close();
+                }
+            }
         }
         protected void Timer9(object sender, EventArgs e)
         {
+            tb1.Text = "";
             div26.Visible = false;
             div27.Visible = false;
             div28.Visible = false;
@@ -446,6 +713,8 @@ namespace DnD_Project
         }
         protected void Timer10(object sender, EventArgs e)
         {
+            tb1.Text = "";
+            Results.Text = "";
             Random rd = new Random();
             int rand = rd.Next(1, 20);
             div36.Visible = false;
@@ -550,6 +819,33 @@ namespace DnD_Project
                 Timerd11.Enabled = true;
             }
             Timerd10.Enabled = false;
+            Dice_Log D = new Dice_Log();
+            Results.Text = Username + " rolled a " + rand.ToString() + " on 1d20";
+            D.Add_Log(Results.Text);
+            string ConnectionString = "Data Source=192.168.1.6;User ID=masteruser; Password=admin;Initial Catalog=DnD";
+            SqlConnection con = new SqlConnection(@"Data Source=192.168.1.6;User ID=masteruser; Password=admin;Initial Catalog=DnD");
+            string trun = "Truncate table [DnD].[dbo].[Dice_temp]";
+            string Select = "Insert into [DnD].[dbo].[Dice_temp] (id, Result) Select top 10 [id],[Result] from [DnD].[dbo].[Dice] order by id desc";
+            SqlDataAdapter Select2 = new SqlDataAdapter("Select [Result] from [DnD].[dbo].[Dice_temp]", con);
+            using (System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand(trun, connection);
+                SqlCommand command2 = new SqlCommand(Select, connection);
+                connection.Open();
+                
+                command.ExecuteNonQuery();
+                command2.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                Select2.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        tb1.Text += dt.Rows[i].ItemArray[0].ToString() + Environment.NewLine;
+                    }
+                    connection.Close();
+                }
+            }
         }
         protected void Timer11(object sender, EventArgs e)
         {
